@@ -1,0 +1,496 @@
+.moneyPage {
+  min-height: 100vh;
+  background: linear-gradient(
+                  135deg,
+                  #003300 0%,
+                  #006600 25%,
+                  #009900 50%,
+                  #66cc00 75%,
+                  #ccff66 100%
+  );
+  background-size: 400% 400%;
+  animation: moneyGradient 20s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes moneyGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.backgroundElements {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.backgroundCoin {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.15;
+  animation: floatCoin 20s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+@keyframes floatCoin {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}
+
+.fallingCoin {
+  position: fixed;
+  font-size: 2rem;
+  pointer-events: none;
+  z-index: 2;
+  animation: coinFall 3s linear infinite;
+  filter: drop-shadow(0 0 10px gold);
+}
+
+@keyframes coinFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.header {
+  padding: 2rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    padding: 3rem 0;
+  }
+}
+
+.backButton {
+  position: absolute;
+  left: 1rem;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: translateX(-5px);
+  }
+}
+
+.titleContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  color: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
+}
+
+.titleIcon {
+  color: gold;
+  width: 40px;
+  height: 40px;
+  animation: coinSpin 3s linear infinite;
+
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@keyframes coinSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+}
+
+.mainContent {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem;
+}
+
+.tarotSection {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tarotCard {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  margin: 0 auto 3rem;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease;
+  box-shadow:
+          0 20px 40px rgba(255, 215, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+  &.cardActive {
+    animation: moneyPulse 2s ease-in-out infinite;
+  }
+
+  &.cardGlowing {
+    animation: goldGlow 1s ease-in-out infinite;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes moneyPulse {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.02) translateY(-10px);
+    box-shadow: 0 30px 60px rgba(255, 215, 0, 0.6);
+  }
+}
+
+@keyframes goldGlow {
+  0%, 100% {
+    box-shadow:
+            0 0 30px rgba(255, 215, 0, 0.6),
+            0 20px 40px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    box-shadow:
+            0 0 60px rgba(255, 215, 0, 0.9),
+            0 30px 60px rgba(255, 215, 0, 0.6);
+  }
+}
+
+.cardContent {
+  padding: 2rem;
+  text-align: center;
+  color: #333;
+  position: relative;
+  z-index: 2;
+}
+
+.cardSymbol {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  animation: coinBounce 3s ease-in-out infinite;
+}
+
+@keyframes coinBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(0) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(270deg);
+  }
+}
+
+.cardTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.predictionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333;
+  }
+}
+
+.trendIcon {
+  color: #ff6b00;
+  width: 24px;
+  height: 24px;
+  animation: trendUp 2s ease-in-out infinite;
+}
+
+@keyframes trendUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.predictionText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  border-left: 4px solid #ff6b00;
+}
+
+.moneySymbols {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  svg {
+    width: 28px;
+    height: 28px;
+    color: #ff6b00;
+    animation: symbolShine 2s ease-in-out infinite;
+
+    &:nth-child(1) { animation-delay: 0s; }
+    &:nth-child(2) { animation-delay: 0.5s; }
+    &:nth-child(3) { animation-delay: 1s; }
+    &:nth-child(4) { animation-delay: 1.5s; }
+  }
+}
+
+@keyframes symbolShine {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.cardGlow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border-radius: 30px;
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+
+  .cardGlowing & {
+    opacity: 0.5;
+  }
+}
+
+.goldenSparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: gold;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: goldSparkle 3s infinite;
+
+  &:nth-child(odd) {
+    background: #ffed4e;
+  }
+}
+
+@keyframes goldSparkle {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(15px, -15px);
+    opacity: 1;
+  }
+}
+
+.startButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(135deg, #ffd700, #ff6b00);
+  color: #333;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto 3rem;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+  }
+}
+
+.buttonIcon {
+  width: 24px;
+  height: 24px;
+  animation: coinSpin 2s linear infinite;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+.resetButton {
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.shareButton {
+  padding: 1rem 2rem;
+  background: rgba(255, 215, 0, 0.3);
+  color: #333;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 215, 0, 0.4);
+  }
+}
+
+.financialTips {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: gold;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+
+      &:before {
+        content: '💰';
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 0;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0, 51, 0, 0.8), transparent);
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
