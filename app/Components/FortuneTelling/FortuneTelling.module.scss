@@ -1,0 +1,615 @@
+.tarotPage {
+
+  --primary-gradient-start: #003300;
+  --primary-gradient-mid: #009900;
+  --primary-gradient-end: #ccff66;
+  --secondary-color: #66cc00;
+  --accent-color: #ffd700;
+  --text-color: #333;
+  --card-bg-start: #ffd700;
+  --card-bg-end: #ffed4e;
+  --symbol-color: #ff6b00;
+  --button-bg-start: #ffd700;
+  --button-bg-end: #ff6b00;
+  --tips-bg: rgba(0, 0, 0, 0.1);
+  --footer-bg: rgba(0, 51, 0, 0.8);
+  --background-element: '💰';
+  --flying-element: '💰';
+  --background-animation: moneyGradient;
+  --card-symbol: '💰';
+  --element-animation: coinFall;
+  --background-animation-duration: 20s;
+
+  min-height: 100vh;
+  background: linear-gradient(
+                  135deg,
+                  var(--primary-gradient-start) 0%,
+                  var(--primary-gradient-mid) 50%,
+                  var(--primary-gradient-end) 100%
+  );
+  background-size: 400% 400%;
+  animation: var(--background-animation) var(--background-animation-duration) ease infinite;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-color);
+
+  &[data-theme="money"] {
+    --primary-gradient-start: #003300;
+    --primary-gradient-mid: #009900;
+    --primary-gradient-end: #ccff66;
+    --secondary-color: #66cc00;
+    --accent-color: #ffd700;
+    --text-color: #333;
+    --card-bg-start: #ffd700;
+    --card-bg-end: #ffed4e;
+    --symbol-color: #ff6b00;
+    --button-bg-start: #ffd700;
+    --button-bg-end: #ff6b00;
+    --tips-bg: rgba(0, 0, 0, 0.1);
+    --footer-bg: rgba(0, 51, 0, 0.8);
+    --background-element: '💰';
+    --flying-element: '💰';
+    --card-symbol: '💰';
+    --background-animation: moneyGradient;
+    --element-animation: coinFall;
+    --background-animation-duration: 20s;
+  }
+
+  &[data-theme="love"] {
+    --primary-gradient-start: #330033;
+    --primary-gradient-mid: #cc6699;
+    --primary-gradient-end: #ffccff;
+    --secondary-color: #ff0066;
+    --accent-color: #ff0066;
+    --text-color: white;
+    --card-bg-start: #ff0066;
+    --card-bg-end: #ff6699;
+    --symbol-color: yellow;
+    --button-bg-start: #ff0066;
+    --button-bg-end: #ff3366;
+    --tips-bg: rgba(255, 255, 255, 0.05);
+    --footer-bg: rgba(51, 0, 51, 0.8);
+    --background-element: '❤️';
+    --flying-element: '❤️';
+    --card-symbol: '♡';
+    --background-animation: loveGradient;
+    --element-animation: flyAround;
+    --background-animation-duration: 20s;
+  }
+
+  &[data-theme="career"] {
+    --primary-gradient-start: #000033;
+    --primary-gradient-mid: #0066cc;
+    --primary-gradient-end: #66ccff;
+    --secondary-color: #66ccff;
+    --accent-color: #66ccff;
+    --text-color: white;
+    --card-bg-start: #003366;
+    --card-bg-end: #3399ff;
+    --symbol-color: #66ccff;
+    --button-bg-start: #003366;
+    --button-bg-end: #66ccff;
+    --tips-bg: rgba(255, 255, 255, 0.05);
+    --footer-bg: rgba(0, 0, 51, 0.8);
+    --background-element: '⭐';
+    --flying-element: '⭐';
+    --card-symbol: '💼';
+    --background-animation: careerGradient;
+    --element-animation: starRise;
+    --background-animation-duration: 20s;
+  }
+}
+
+@keyframes moneyGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes loveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes careerGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes coinFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flyAround {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(20px, -20px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(40px, 0) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(20px, 20px) rotate(270deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes starRise {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.backgroundElements {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.backgroundElement {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.15;
+  animation: floatBackground 15s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+@keyframes floatBackground {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+.flyingElement {
+  position: fixed;
+  font-size: 1.8rem;
+  pointer-events: none;
+  z-index: 0;
+  animation: var(--element-animation) 3s linear infinite;
+  filter: drop-shadow(0 0 10px var(--secondary-color));
+}
+
+.header {
+  padding: 2rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    padding: 3rem 0;
+  }
+}
+
+.titleContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: var(--accent-color);
+    animation: themeIconAnimation 3s ease-in-out infinite;
+
+    @media (min-width: 768px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+@keyframes themeIconAnimation {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+.mainContent {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem;
+
+  @media (min-width: 768px) {
+    padding: 3rem 2rem;
+  }
+}
+
+.tarotSection {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tarotCard {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  margin: 0 auto 3rem;
+  background: linear-gradient(135deg, var(--card-bg-start), var(--card-bg-end));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease;
+  box-shadow:
+          0 20px 40px rgba(var(--secondary-color-rgb, 255, 0, 100), 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  @media (min-width: 768px) {
+    width: 350px;
+    height: 500px;
+  }
+
+  &.cardActive {
+    animation: cardPulse 2s ease-in-out infinite;
+  }
+
+  &.cardGlowing {
+    animation: cardGlow 1s ease-in-out infinite;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes cardPulse {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 20px 40px rgba(var(--secondary-color-rgb, 255, 0, 100), 0.3);
+  }
+  50% {
+    transform: scale(1.02) translateY(-10px);
+    box-shadow: 0 30px 60px rgba(var(--secondary-color-rgb, 255, 0, 100), 0.5);
+  }
+}
+
+@keyframes cardGlow {
+  0%, 100% {
+    box-shadow:
+            0 0 30px rgba(var(--secondary-color-rgb, 255, 0, 100), 0.5),
+            0 20px 40px rgba(var(--secondary-color-rgb, 255, 0, 100), 0.3);
+  }
+  50% {
+    box-shadow:
+            0 0 60px rgba(var(--secondary-color-rgb, 255, 0, 100), 0.8),
+            0 30px 60px rgba(var(--secondary-color-rgb, 255, 0, 100), 0.5);
+  }
+}
+
+.cardContent {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+  z-index: 2;
+}
+
+.cardSymbol {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  animation: symbolAnimation 3s ease-in-out infinite;
+}
+
+@keyframes symbolAnimation {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+.cardTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cardInstruction {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.predictionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  svg {
+    color: var(--symbol-color);
+    width: 24px;
+    height: 24px;
+    animation: predictionIconAnimation 2s ease-in-out infinite;
+  }
+}
+
+@keyframes predictionIconAnimation {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.predictionText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.symbolsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  .symbol {
+    font-size: 1.5rem;
+    animation: symbolFloat 3s ease-in-out infinite;
+
+    &:nth-child(1) { animation-delay: 0s; }
+    &:nth-child(2) { animation-delay: 0.5s; }
+    &:nth-child(3) { animation-delay: 1s; }
+    &:nth-child(4) { animation-delay: 1.5s; }
+
+    svg {
+      width: 28px;
+      height: 28px;
+      color: var(--symbol-color);
+    }
+  }
+}
+
+@keyframes symbolFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.cardGlow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(135deg, var(--card-bg-start), var(--card-bg-end));
+  border-radius: 30px;
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+
+  .cardGlowing & {
+    opacity: 0.5;
+  }
+}
+
+.cardEffects {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.effect {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: effectMove 3s infinite;
+
+  &:nth-child(1) { top: 10%; left: 10%; }
+  &:nth-child(2) { top: 20%; right: 20%; animation-delay: 0.5s; }
+  &:nth-child(3) { bottom: 30%; left: 30%; animation-delay: 1s; }
+  &:nth-child(4) { bottom: 40%; right: 40%; animation-delay: 1.5s; }
+}
+
+@keyframes effectMove {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(10px, -10px);
+    opacity: 1;
+  }
+}
+
+.startButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(135deg, var(--button-bg-start), var(--button-bg-end));
+  color: var(--text-color);
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto 3rem;
+  box-shadow: 0 10px 30px rgba(var(--secondary-color-rgb, 255, 0, 100), 0.4);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(var(--secondary-color-rgb, 255, 0, 100), 0.6);
+  }
+
+  .buttonIcon {
+    width: 24px;
+    height: 24px;
+    animation: buttonIconAnimation 2s ease-in-out infinite;
+  }
+}
+
+@keyframes buttonIconAnimation {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.shareButton {
+  padding: 1rem 2rem;
+  background: rgba(var(--secondary-color-rgb, 255, 0, 100), 0.2);
+  color: var(--text-color);
+  border: 2px solid rgba(var(--secondary-color-rgb, 255, 0, 100), 0.4);
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(var(--secondary-color-rgb, 255, 0, 100), 0.3);
+  }
+}
+
+.tipsSection {
+  background: var(--tips-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+
+      &:before {
+        content: var(--background-element);
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 0;
+  text-align: center;
+  background: linear-gradient(to top, var(--footer-bg), transparent);
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
