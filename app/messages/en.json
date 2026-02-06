@@ -1,0 +1,166 @@
+{
+  "common": {
+    "backToHome": "Back to Home",
+    "copyPrediction": "Copy Prediction",
+    "savePrediction": "Save Prediction",
+    "newPrediction": "New Prediction",
+    "tryAgain": "Try Again",
+    "startReading": "Start Reading",
+    "startJourney": "Start Journey",
+    "openTreasure": "Open Treasure",
+    "learnFate": "Learn Fate",
+    "saveGoal": "Save as Goal",
+    "saveForDay": "Save for Day",
+    "today": "Today",
+    "advice": "Advice",
+    "howItWorks": "How It Works",
+    "language": "Language",
+    "russian": "Russian",
+    "english": "English"
+  },
+
+  "home": {
+    "title": "Esoteric Oracle",
+    "subtitle": "Oracle",
+    "tagline": "Uncover the mysteries of fate through ancient practices",
+    "sectionTitle": "Choose a Divination Category",
+    "sectionDescription": "Each category opens access to unique predictions and ancient practices. Focus on your question and choose your path.",
+    "instruction1": "Focus on your question",
+    "instruction2": "Choose the area of interest",
+    "instruction3": "Get a personalized prediction",
+    "footer": "© Esoteric Oracle. All predictions are for entertainment purposes only.",
+    "disclaimer": "All predictions are for entertainment purposes only."
+  },
+
+  "nav": {
+    "cardOfDay": {
+      "title": "Card of the Day",
+      "description": "Find out what awaits you today"
+    },
+    "love": {
+      "title": "Love",
+      "description": "Relationship and feelings forecast"
+    },
+    "money": {
+      "title": "Money",
+      "description": "Financial predictions"
+    },
+    "career": {
+      "title": "Career",
+      "description": "Professional growth and success"
+    }
+  },
+
+  "love": {
+    "title": "Love Divination",
+    "subtitle": "Unlock the secrets of your heart",
+    "cardTitle": "Love Card",
+    "cardInstruction": "Focus on a love question",
+    "cardLoading": "The card is revealing...",
+    "predictionTitle": "Your Prediction:",
+    "tipsTitle": "How to get an accurate prediction:",
+    "tips": ["Focus on a specific love question",
+     "Keep in mind the image of a loved one or desired relationship",
+    "Click the \"Start\" button when you feel ready"
+    ],
+    "footer": "Love is the most powerful magical ritual. Believe in your luck!",
+    "predictions": [
+      "Your heart will soon meet a kindred spirit. Be open to new acquaintances in unexpected places.",
+      "The love you seek is already close. Pay attention to those who have always been with you.",
+      "You are awaiting a romantic adventure that will change your perception of love.",
+      "Harmony in relationships will come when you learn to express your true feelings.",
+      "Solitude is a time for self-discovery. Love yourself, and love will find you."
+    ]
+  },
+
+  "money": {
+    "title": "Money Divination",
+    "subtitle": "Discover financial opportunities",
+    "cardTitle": "Abundance Card",
+    "cardInstruction": "Focus on financial goals",
+    "cardLoading": "Treasures are opening...",
+    "predictionTitle": "Financial Forecast:",
+    "tipsTitle": "Financial advice from the universe:",
+    "tips": ["Believe in your ability to earn",
+    "Be open to new opportunities",
+    "Invest not only money but also time in knowledge",
+    "Gratitude attracts abundance"
+    ],
+    "footer": "Money is energy. Direct its flow into your life!",
+    "predictions": [
+      "Financial success awaits you in the near future. Pay attention to unexpected opportunities.",
+      "Your investments will soon bear fruit. Be patient in financial matters.",
+      "A new source of income will appear from an unexpected side. Be open to collaboration.",
+      "Financial stability will come after you put your current affairs in order.",
+      "Money will come to you through creative activity. Don't be afraid to monetize your talents."
+    ]
+  },
+
+  "career": {
+    "title": "Career Divination",
+    "subtitle": "Conquer professional heights",
+    "cardTitle": "Success Card",
+    "cardInstruction": "Focus on professional goals",
+    "cardLoading": "The path to success is opening...",
+    "predictionTitle": "Career Forecast:",
+    "tipsTitle": "Keys to career success:",
+    "tips": ["Set clear professional goals",
+   "Continuously develop professional skills",
+     "Create value for the company",
+    "Be proactive and take responsibility"
+    ],
+    "footer": "Your professional success is a reflection of your efforts and self-belief!",
+    "predictions": [
+      "You will have a career growth in the coming months. Be prepared for a new position.",
+      "Professional success will come through learning and self-development.",
+      "Colleagues will appreciate your ideas. Don't be afraid to offer innovative solutions.",
+      "Management will notice you. Show initiative in important projects.",
+      "A new professional opportunity will appear through business connections."
+    ]
+  },
+
+  "cardOfDay": {
+    "title": "Card of the Day",
+    "subtitle": "Prediction for today",
+    "cardTitle": "Destiny Card",
+    "getCard": "Draw card",
+    "getNewCard": "Get new card",
+    "resetCard": "Reset",
+    "cardInstruction": "Focus on today",
+    "cardLoading": "Destiny is revealing cards...",
+    "predictionTitle": "Today's Forecast:",
+    "tipsTitle": "Today's Advice:",
+    "tips": ["Start the day with a positive attitude",
+    "Be attentive to the signs of fate",
+    "Trust your intuition",
+    "Appreciate every moment of today"
+    ],
+    "footer": "Today is a canvas, and you are the artist of your destiny!",
+    "predictions": [
+      "Today will bring unexpected meetings. Be open to communication.",
+      "Your intuition is especially strong today. Trust your inner voice.",
+      "Today is the perfect day to start new projects. Act boldly!",
+      "You will have pleasant surprises. Stay in a good mood.",
+      "Today will bring clarity to important issues. Pay attention to signs."
+    ],
+    "divinationTime": {
+      "title": "Time for divination",
+      "description": "The best time for daily card divination is morning, after waking up."
+    },
+    "dayEnergy": {
+      "title": "Energy of the day",
+      "description": "Each day carries unique energy. The card will help you tune into it."
+    },
+    "dayJournal": {
+      "title": "Day journal",
+      "description": "Write down your thoughts about the card throughout the day for better understanding."
+    },
+    "suit": "Suit",
+    "type": "Type",
+    "meaning": "Meaning",
+    "description": "Description",
+    "value": "Number",
+    "notFound": "Could not load card",
+    "tryAgain": "Try again"
+  }
+}
