@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🔮 Esoteric Oracle (Эзотерический Оракул)
+<div align="center">
 
-## Getting Started
+Многоязычное веб-приложение для гаданий и предсказаний с современным дизайном
 
-First, run the development server:
+(Деплой)[]
 
-```bash
+</div>
+
+🌟 Особенности
+🃏 Гадания и предсказания
+Карта дня на Таро - ежедневное персональное предсказание
+
+Гадания - на любовь, карьеру и финансы
+
+🌈 Современный интерфейс
+
+✨ Анимированные карты и эффекты
+
+🌓 Поддержка светлой/тёмной темы
+
+📱 Полностью адаптивный дизайн
+
+🎨 Уникальная эзотерическая эстетика
+
+⚡ Быстрая загрузка и плавная анимация
+
+🌍 Мультиязычность
+🇷🇺 Русский и 🇬🇧 Английский языки
+
+🔄 Динамическое переключение локали
+
+📚 Централизованная система переводов
+
+🌐 Автоматическое определение языка
+
+🚀 Технологии
+Next.js 14 - React фреймворк с App Router
+
+TypeScript - статическая типизация
+
+next-intl - интернационализация и локализация
+
+SCSS Modules - модульные стили
+
+Lucide React - иконки
+
+ESLint + Prettier - линтинг и форматирование
+
+⚡ Быстрый старт
+Предварительные требования
+Node.js 18.17 или выше
+
+npm, yarn или pnpm
+
+Установка
+bash
+# Клонировать репозиторий
+git clone https://github.com/yourusername/esoteric-oracle.git
+cd esoteric-oracle
+
+# Установить зависимости
+npm install
+# или
+yarn install
+# или
+pnpm install
+
+# Запустить в режиме разработки
 npm run dev
-# or
+# или
 yarn dev
-# or
+# или
 pnpm dev
-# or
-bun dev
-```
+Приложение будет доступно по адресу: http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with  your browser to see the result.
+Сборка для продакшена
+bash
+# Сборка проекта
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Запуск продакшен версии
+npm run start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Статический анализ кода
+npm run lint
 
-## Learn More
+<div align="center">
 
-To learn more about Next.js, take a look at the following resources:
+Сделано с магией и любовью к коду ✨
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+</div>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Примечание: Это приложение создано для развлечения и не заменяет профессиональную помощь. Используйте с позитивным настроем! 🔮✨
