@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.scss'
-import StoreProvider from './store/provider'
+import '../globals.scss'
+import StoreProvider from '../store/provider'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
@@ -17,8 +17,10 @@ type Props = {
     params: { locale: string };
 };
 
-export default async function RootLayout({ children, params: { locale } }: Props) {
-
+export default async function RootLayout({
+                                             children,
+                                             params: { locale }
+                                         }: Props) {
     const messages = await getMessages();
 
     return (
