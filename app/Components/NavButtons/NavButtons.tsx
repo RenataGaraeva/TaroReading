@@ -16,7 +16,15 @@ const NavButtons = () => {
         dispatch(setSelectedCategory(category))
     }
 
-    const buttons = [
+    interface NavButton {
+        title: string;
+        path: '/' | '/card-of-day' | '/money' | '/love' | '/career';
+        icon: React.ComponentType<any>;
+        description: string;
+
+    }
+
+    const buttons: NavButton[] = [
         {
             title: t('cardOfDay.title'),
             path: "/card-of-day",
@@ -41,7 +49,7 @@ const NavButtons = () => {
             icon: Briefcase,
             description: t('career.description'),
         }
-    ]
+    ] as const;
 
     return (
         <div className={styles.navButtons}>
