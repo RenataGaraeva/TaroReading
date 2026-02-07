@@ -212,7 +212,7 @@ const FortuneTelling: React.FC<TarotPageProps> = ({ theme }) => {
                                         </div>
                                         <p className={styles.predictionText}>{prediction}</p>
                                         <div className={styles.symbolsContainer}>
-                                            {config.symbols.map((symbol, index) => (
+                                            {config.symbols.map((symbol: string, index: number) => (
                                                 <div key={index} className={styles.symbol}>
                                                     {symbol}
                                                 </div>
